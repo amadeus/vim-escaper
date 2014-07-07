@@ -1,16 +1,18 @@
-function! <SID>Escape(...) range
+scriptencoding utf-8
+
+function! s:Escape(...) range abort
   if !&modifiable
     echomsg 'Error: Escaper Cannot modify current file.'
     return
   endif
 
   if exists("g:CustomEntities")
-    call <SID>EntityReplace(g:CustomEntities, a:firstline . "," . a:lastline, a:000)
+    call s:EntityReplace(g:CustomEntities, a:firstline . "," . a:lastline, a:000)
   endif
-  call <SID>EntityReplace(s:EntityList, a:firstline . "," . a:lastline, a:000)
+  call s:EntityReplace(s:EntityList, a:firstline . "," . a:lastline, a:000)
 endfunc
 
-function! <SID>EntityReplace(list, rng, ignore)
+function! s:EntityReplace(list, rng, ignore) abort
   for l:item in a:list
     if index(a:ignore, l:item[0]) == -1
       execute "silent " . a:rng . "s/" . l:item[0] . "/" . l:item[1] . "/eg"
@@ -254,5 +256,5 @@ let s:EntityList = [
 \ ]
 
 " External API commands
-command! -nargs=* -range=% Escape    <line1>,<line2>call <SID>Escape("<", ">", "\"", "\'", <f-args>)
-command! -nargs=* -range=% EscapeAll <line1>,<line2>call <SID>Escape(<f-args>)
+command! -nargs=* -range=% Escape    <line1>,<line2>call s:Escape("<", ">", "\"", "\'", <f-args>)
+command! -nargs=* -range=% EscapeAll <line1>,<line2>call s:Escape(<f-args>)
