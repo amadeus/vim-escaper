@@ -61,4 +61,4 @@ let g:CustomEntities [
 
 [The MIT License (MIT)](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2014 Amadeus Demarzi
+Copyright &copy; 2014 Amadeus Demarzi
