@@ -256,5 +256,5 @@ let s:EntityList = [
 \ ]
 
 " External API commands
-command! -nargs=* -range=% Escape    <line1>,<line2>call s:Escape("<", ">", "\"", "\'", <f-args>)
+command! -nargs=* -range=% Escape    <line1>,<line2>call s:Escape("<", ">", '\"', "'", <f-args>)
 command! -nargs=* -range=% EscapeAll <line1>,<line2>call s:Escape(<f-args>)
