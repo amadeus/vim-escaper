@@ -48,7 +48,7 @@ called first, it enables the default replacements to be overridden.
 Simply provide a global list of replacements like so:
 
 ```
-let g:CustomEntities [
+let g:CustomEntities = [
   \ ["£", "\&pound;"],
   \ ["¤", "\&curren;"]
 \ ]
