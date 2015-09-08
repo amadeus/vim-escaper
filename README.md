@@ -16,13 +16,13 @@ There are 2 APIs. Both can be called by themselves (to replace the entire
 file), with a range, or a visual selection.
 
 
-### `:Entities`
+### `:Escape`
 
 This command is safe for use in html files. It will not escape `<`, `>`, `'`
 and `"` characters.
 
 
-### `:EntitiesAll`
+### `:EscapeAll`
 
 This command will replace ALL entities.
 
@@ -36,7 +36,7 @@ space.  These arguments can be passed into both commands above.
 For example, this command would replace all entities except `>` and `"`:
 
 ```
-:EntitiesAll > "
+:EscapeAll > "
 ```
 
 
